@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Agu+Display&display=swap');
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  /* Include padding and border in the element's total width/height */
+}
+body {
+  margin: 0;
+  /* Remove default margins */
+  height: 100vh;
+  /* Ensure it covers the full viewport height */
+  background-color: #ffffff;
+  /* Set the background color */
+  color: #6746c3;
+  font-family: "Agu Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "MORF" 0;
+}
+
+.App {
+  text-align: center;
+}
+
+.sound-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* Default to 4 columns */
+  gap: 48px;
+  padding: 20px;
+  max-width: 1200px;
+  /* Restrict max width for centering */
+  margin: 0 auto;
+  /* Center the grid horizontally */
+}
+
+@media (max-width: 900px) {
+  .sound-grid {
+    grid-template-columns: repeat(3, 1fr); /* Adjust to 3 columns for medium screens */
+    gap: 25px; /* Adjust gap for smaller screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .sound-grid {
+    grid-template-columns: repeat(2, 1fr); /* Single column for small screens */
+    gap: 20px; /* Adjust gap further for small screens */
+    padding: 10px; /* Reduce padding on small screens */
+  }
+}
+
+.title {
+  font-size: 58px;
+  margin: 10px 15px 40px 20px;
+}
+
+.sound-name {
+  font-size: 25px;
+  color: #e636ab
+}
+
+.sound-card {
+  border-radius: 10px;
+  box-shadow: 5px 4px 10px 0px rgba(168, 166, 168, 1);
+  padding: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  max-width: 220px;
+  height: 195px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffeded;
+}
+
+.sound-card:hover {
+  transform: scale(1.05);
+}
+
+.sound-card--active {
+  border: 2px solid #c7b5f9; /* Highlighted border for the active card */
+}
+
+.sound-logo {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
